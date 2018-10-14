@@ -1,0 +1,21 @@
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    background-color: whitesmoke
+}
+
+.jumbotron {
+    color: rgb(31, 202, 202);
+    background-color: white;
+}
+
+.contentRow {
+    border: 1px solid rgb(174, 237, 241);
+}
+
+.parallax {
+    background-image: url(../assets/images/sunset-ibaraki.jpg);
+    height: 300px;
+    background-attachment: fixed;
+    background-position: 0% 230%;
+    background-repeat: no-repeat;
+}
