@@ -18,7 +18,7 @@ class Home extends Component {
         return (
             <div>
                 <Jumbotron>
-                    <h1>Test</h1>
+                    <h1>Learn Everyday</h1>
                 </Jumbotron>
                 <Container>
                     <Row>
