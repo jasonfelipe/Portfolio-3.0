@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Card from "../components/Card";
-import './pages.css';
 import Images from "../utils/Images";
+import './pages.css';
 
 
 class Portfolio extends Component {
@@ -13,16 +13,19 @@ class Portfolio extends Component {
             <div>
                 <Container>
 
-                    <h1>
+                    <h1 className='header'>
                         Completed Projects
                     </h1>
 
                     <Row>
                         <div className='col-md-4'>
                             <Card
-                                src={Images[6]} alt={"marvel-collab"}
+                                src={Images[4 ]} alt={"marvel-collab"}
                                 cardTitle={'Marvel Collab Finder'}
-                                cardText='Test'
+                                github='https://github.com/jasonfelipe/Marvel-Collab-Finder'
+                                projecturl="https://jasonfelipe.github.io/Marvel-Collab-Finder/"
+                                cardText="A mobile-friendly app that uses Google's firebase, Marvel's Comic book API
+                                and Ebay's API to search for characters' collaborations and their respective comics."
                             >
                             </Card>
                         </div>
@@ -31,7 +34,9 @@ class Portfolio extends Component {
                             <Card
                                 src={Images[0]} alt={"0penroom"}
                                 cardTitle={'0penroom'}
-                                cardText='Test'
+                                github='https://github.com/jasonfelipe/0penroom'
+                                projecturl='http://www.0penroom.com/'
+                                cardText="A simple chatroom using Socket.io, MySQL, and one HTML page loaded with jQuery."
                             >
                             </Card>
                         </div>
@@ -40,24 +45,56 @@ class Portfolio extends Component {
                             <Card
                                 src={Images[1]} alt={"AHIscanner"}
                                 cardTitle={'AHI Scanner'}
-                                cardText='Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                                github='https://github.com/jasonfelipe/AHI-Scanner'
+                                projecturl='https://ahi-scanner.herokuapp.com/'
+                                cardText="A mobile-friendly product scanner currently using the OpenFDA API, 
+                                Quagga.js barcodescanner, and MongoDB (Scanner currently doesn't work on mobile)."
                             >
                             </Card>
                         </div>
                     </Row>
 
-                    <h1>
-                        Other Works
+                    <h1 className='header'>
+                        Other Small Works
                     </h1>
 
                     <Row>
-                        <h4>
-                            Content
-                        </h4>
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[5]} alt={"sfclickgame"}
+                                cardTitle={'Street Fighter Click Game'}
+                                github='https://github.com/jasonfelipe/clickygame'
+                                projecturl='https://jfelipe-sfclickygame.herokuapp.com/'
+                                cardText="A video game character search that uses the giphy API to bring up gifs, 
+                                and the Giantbomb API to bring up a small biography of the character."
+                            >
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[2]} alt={"friendfinder"}
+                                cardTitle={'Friend Finder'}
+                                github='https://github.com/jasonfelipe/friendfinder'
+                                projecturl='https://jfelipe-friendfinder.herokuapp.com/'
+                                cardText="A small app that lets users fill a survey and then matches them from 
+                                past survey takers. Made with Express."
+                            >
+                            </Card>
+                        </div>
+
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[3]} alt={"liribot"}
+                                cardTitle={'LIRI Bot'}
+                                github='https://github.com/jasonfelipe/liri-node-app'
+                                projecturl='https://github.com/jasonfelipe/liri-node-app'
+                                cardText="A simple Node app that lets users get their own 
+                                twitter posts from the twitter API, search movies using the 
+                                OMDB API, and music from the Spotify API."
+                            >
+                            </Card>
+                        </div>
                     </Row>
 
 

@@ -26,3 +26,8 @@ body {
     position: absolute;
 }
 
+.header {
+    margin: 25px;
+    padding: 5px;
+    border-bottom: 2px solid rgb(31, 202, 202)
+}

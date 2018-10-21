@@ -1,10 +1,25 @@
 .card {
+    margin: 10px;
     width: 20rem;
-    border: 1px solid rgb(31, 202, 202)
+    min-height: 35rem;
+    border: 1px solid gray;
 }
 
 .card-img-top {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.btn-primary {
+    background-color: rgb(16, 134, 134);
+    border-color: rgb(16, 134, 134);
+    color: white !important;
+
+}
+
+.btn-secondary {
+    background-color: black;
+    border-color: black;
+    color: white !important;
 }

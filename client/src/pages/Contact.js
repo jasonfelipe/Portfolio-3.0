@@ -5,24 +5,21 @@ import Jumbotron from "../components/Jumbotron";
 import './pages.css'
 
 class Contact extends Component {
-
-
-
     render() {
         return (
             <div>
                 <Container>
+
                     <h1>
                         Contact Me!
                     </h1>
 
-                    <div>
-                        CONTENT
-                    </div>
+                    <Row>
+                        <p>
+                            Will attach database soon!
+                        </p>
+                    </Row>
 
-                    <div>
-                        CONTENT
-                    </div>
                 </Container>
             </div>
         )
