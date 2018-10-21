@@ -1,6 +1,7 @@
 body {
     font-family: 'Bai Jamjuree', sans-serif;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    margin-top: 50px;
 }
 
 .jumbotron {

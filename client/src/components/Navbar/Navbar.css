@@ -10,5 +10,17 @@ nav.navbar.navbar-default {
 }
 
 .nav-item {
-  margin: 20px;
+  margin: 45px;
+}
+
+.navbar-nav>li>a {
+  padding: 0;
+}
+
+.navbar-fixed-top {
+  top: 0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: whitesmoke;
 }
