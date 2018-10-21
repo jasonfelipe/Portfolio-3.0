@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import './pages.css';
 import Images from "../utils/Images";
@@ -13,42 +12,55 @@ class Portfolio extends Component {
         return (
             <div>
                 <Container>
+
                     <h1>
-                        My Works
+                        Completed Projects
                     </h1>
 
+                    <Row>
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[6]} alt={"marvel-collab"}
+                                cardTitle={'Marvel Collab Finder'}
+                                cardText='Test'
+                            >
+                            </Card>
+                        </div>
 
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[0]} alt={"0penroom"}
+                                cardTitle={'0penroom'}
+                                cardText='Test'
+                            >
+                            </Card>
+                        </div>
 
+                        <div className='col-md-4'>
+                            <Card
+                                src={Images[1]} alt={"AHIscanner"}
+                                cardTitle={'AHI Scanner'}
+                                cardText='Lorem ipsum dolor sit amet, 
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                            >
+                            </Card>
+                        </div>
+                    </Row>
 
-
-                    <div className='row'>
-                        <h2>Content</h2>
-                        <Card src={Images[1]} alt={"0penroom"}>
-                            <div classname="card-body">
-                                <h3>test</h3>
-                                <p>It's a test</p>
-                            </div>
-                        </Card>
-                    </div>
+                    <h1>
+                        Other Works
+                    </h1>
 
                     <Row>
-                        <h2>Content</h2>
-                        <p>
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-                            Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-                        </p>
+                        <h4>
+                            Content
+                        </h4>
                     </Row>
 
 
-                    <Row>
-                        <h2>Content</h2>
-                        <p>
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-                            Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-                        </p>
-                    </Row>
                 </Container>
             </div>
         )

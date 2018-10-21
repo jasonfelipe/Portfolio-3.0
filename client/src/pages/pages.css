@@ -1,7 +1,7 @@
 body {
     font-family: 'Bai Jamjuree', sans-serif;
     background-color: whitesmoke;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .jumbotron {
@@ -26,7 +26,3 @@ body {
     position: absolute;
 }
 
-.card {
-    width: 20rem;
-    border: 1px solid rgb(31, 202, 202);
-}

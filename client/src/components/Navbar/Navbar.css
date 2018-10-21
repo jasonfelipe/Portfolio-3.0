@@ -24,3 +24,7 @@ nav.navbar.navbar-default {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color: whitesmoke;
 }
+
+.navbar {
+  border-bottom: 1px solid rgb(174, 237, 241);
+}
