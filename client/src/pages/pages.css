@@ -7,6 +7,7 @@ body {
 .jumbotron {
     color: rgb(31, 202, 202);
     background-color: white;
+    height: 250px !important;
 }
 
 .contentRow {
@@ -30,4 +31,28 @@ body {
     margin: 25px;
     padding: 5px;
     border-bottom: 2px solid rgb(31, 202, 202)
+}
+
+#mypicture {
+    float: left;
+    max-height: 720px;
+    max-width: 480px;
+}
+
+.title-header {
+    color: rgb(145, 160, 157);
+    text-decoration: underline;
+}
+
+.smallNotes {
+    font-size: 10pt;
+}
+
+.center {
+    margin: 0 auto;
+    display: block;
+}
+
+.mainNotes {
+    text-indent: 50px;
 }
