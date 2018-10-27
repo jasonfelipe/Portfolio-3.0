@@ -13,6 +13,11 @@ nav.navbar.navbar-default {
   margin: 45px;
 }
 
+.nav-link {
+  font-size: 14pt;
+  padding: 0 !important;
+}
+
 .navbar-nav>li>a {
   padding: 0;
 }
@@ -27,4 +32,9 @@ nav.navbar.navbar-default {
 
 .navbar {
   border-bottom: 1px solid gray;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  font-weight: 600; 
+  color: teal; 
 }

@@ -4,7 +4,6 @@ import Jumbotron from "../components/Jumbotron";
 import Me from '../assets/images/profile/its-me.jpg'
 import { List, ListItem } from '../components/List'
 
-
 import './pages.css'
 
 class Home extends Component {
@@ -30,7 +29,7 @@ class Home extends Component {
                 <Container>
                     <Row>
                         <Col size='md-6'>
-                            <h1>Welcome to my place!</h1>
+                            <h1 className='header text-center'>Welcome to My Place!</h1>
                             <Row>
                                 <div className='center'>
                                     <img src={Me} id='mypicture' alt='me' />
@@ -42,25 +41,19 @@ class Home extends Component {
                                     <br />
                                     Born in: Vancouver, Canada (Dual Citizenship in CA and US)
                                 </p>
-
-
                             </Row>
 
                             <h3 className='text-center'>Likes</h3>
                             <Row>
-                                <div className='center'>
+                                <div id='likes' className='center'>
                                     <List>
                                         {this.state.likes.map(likes => {
-                                            return <ListItem>
+                                            return <ListItem key={likes}>
                                                 {likes}
                                             </ListItem>
                                         })}
                                     </List>
                                 </div>
-                            </Row>
-
-                            <Row>
-
                             </Row>
                         </Col>
 
