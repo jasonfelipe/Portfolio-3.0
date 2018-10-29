@@ -39,7 +39,7 @@ class Home extends Component {
             currentTitle: title,
             showTitle: true,
             jumbotronTitles: [
-                'Welcome to Test Number #'  + this.state.randomNumber,
+                'Welcome to Test Number #' + this.state.randomNumber,
                 "Welcome!",  
                 'Currently Adapting...', 'Currently Studying...', 'Currently Dreaming...', "You're not alone...",
                 " お前はもう。。。", 'ジェイソン・フェリペ', '何！？',
@@ -76,7 +76,7 @@ class Home extends Component {
                 <Jumbotron>
                     <CSSTransition
                         in={this.state.showTitle}
-                        classNames='message'
+                        classNames='pop'
                         timeout={5000}
                     >
                         <h1 id='jumbotron-title'>{this.state.currentTitle}</h1>

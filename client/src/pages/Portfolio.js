@@ -10,6 +10,23 @@ import './pages.css';
 
 
 class Portfolio extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loaded: false,
+
+        }
+    }
+
+    picturesloaded = () => {
+        this.setState({
+            loaded: true
+        })
+    }
+
+    componentDidMount(){
+        this.picturesloaded();
+    }
 
     render() {
         return (
@@ -21,7 +38,13 @@ class Portfolio extends Component {
                     </h1>
 
                     <Row>
-                        <div className='col-md-4'>
+
+                        <CSSTransition
+                            in={this.state.showTitle}
+                            classNames='pop'
+                            timeout={5000}
+                        >
+                            <div className='col-md-4'>
                             <Card
                                 src={Images[4]} alt={"marvel-collab"}
                                 cardTitle={'Marvel Collab Finder'}
@@ -31,7 +54,8 @@ class Portfolio extends Component {
                                 and Ebay's API to search for characters' collaborations and their respective comics."
                             >
                             </Card>
-                        </div>
+                            </div>
+                        </CSSTransition>
 
                         <div className='col-md-4'>
                             <Card
