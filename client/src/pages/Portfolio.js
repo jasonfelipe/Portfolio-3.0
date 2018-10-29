@@ -3,6 +3,9 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Card from "../components/Card";
 import Images from "../utils/Images";
+import { CSSTransition } from 'react-transition-group';
+
+import './transitions.css';
 import './pages.css';
 
 

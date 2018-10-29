@@ -31,9 +31,9 @@ class Contact extends Component {
             <div>
                 <Container>
 
-                    <h1 className='header'>
+                    <h2 className='header'>
                         Contact Me!
-                    </h1>
+                    </h2>
 
                     <Row>
                         <form className='text-center'>

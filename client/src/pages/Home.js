@@ -5,44 +5,83 @@ import Me from '../assets/images/profile/its-me.jpg';
 import { List, ListItem } from '../components/List';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import { CSSTransition } from 'react-transition-group';
 
 import './pages.css'
+import './transitions.css'
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            likes: ['Video Games (Fighting games)',
+            likes: [
+                'Video Games (Fighting games)',
                 'Steak (Medium-Rare)',
                 'Traveling (Anywhere)',
                 "Pets (I don't have any... )"
             ],
-            jumbotronTitle: ["Welcome!", 'Currently Adapting...', 'Currently Studying...',],
-            today: ""
+            jumbotronTitles: ['Welcome!'],
+            currentTitle: "",
+            showTitle: false,
+            randomNumber: ""
 
         }
     }
 
+    componentDidMount() {
+        this.titleRandomizer();
+    }
+
     titleRandomizer = () => {
-        let title =  this.state.jumbotronTitle[Math.floor(Math.random() * Math.floor(this.state.jumbotronTitle.length))];
-        console.log(title)
-        return title;
+        let title = this.state.jumbotronTitles[Math.floor(Math.random() * Math.floor(this.state.jumbotronTitles.length))];
+        this.randomNumber();
+        this.setState({
+            currentTitle: title,
+            showTitle: true,
+            jumbotronTitles: [
+                'Welcome to Test Number #'  + this.state.randomNumber,
+                "Welcome!",  
+                'Currently Adapting...', 'Currently Studying...', 'Currently Dreaming...', "You're not alone...",
+                " お前はもう。。。", 'ジェイソン・フェリペ', '何！？',
+                '⬇⬊➡ + 👊', '➡☆⬇⬊ + 2', '➡⬇⬊ + 👊', '↑↑↓↓←→←→BA', '⟲ + 👊'
+            ],
+        })
+        this.changeTitle(5000);
+    }
+
+
+    hideTitle = () => {
+        this.setState({
+            showTitle: false
+        })
+    }
+
+    changeTitle = time => {
+        setTimeout(() => {this.hideTitle();}, 4000);
+        setTimeout(this.titleRandomizer, time)
     }
 
 
     randomNumber = () => {
         let number = Math.floor(Math.random() * Math.floor(999999))
-        return number
+        this.setState({
+            randomNumber: number
+        })
     }
-
 
 
     render() {
         return (
             <div>
                 <Jumbotron>
-                    <h1 id='jumbotron-title'>{this.titleRandomizer()}</h1>
-                    <Moment id='jumbotron-time' format='llll'/>
+                    <CSSTransition
+                        in={this.state.showTitle}
+                        classNames='message'
+                        timeout={5000}
+                    >
+                        <h1 id='jumbotron-title'>{this.state.currentTitle}</h1>
+                    </CSSTransition>
+                    <Moment id='jumbotron-time' format='llll' />
                 </Jumbotron>
                 <Container>
                     <Row>
