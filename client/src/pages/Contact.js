@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Jumbotron from "../components/Jumbotron";
-import { Input, FormBtn, TextArea } from "../components/Form"
+import { Input, FormBtn, TextArea } from "../components/Form";
+import API from "../utils/API";
 
 import './pages.css'
 
@@ -17,12 +18,34 @@ class Contact extends Component {
         }
     }
 
+    reset = () => {
+        this.setState({
+            name: "",
+            email: "",
+            comment: "",
+        })
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
         });
+    };
+
+    handleSubmit = event => {
+        event.preventDefault();
+        let comment = {
+            name: this.state.name,
+            email: this.state.email,
+            comment: this.state.comment
+        }
+        API.sendComment(comment)
+            .then(res => {
+                console.log(res);
+                this.reset();
+            })
+            .catch(err => console.log(err))
     };
 
 
@@ -58,9 +81,10 @@ class Contact extends Component {
                                 placeholder="Say something!"
                             />
 
-                            <FormBtn>
+                            <button className='btn btn-secondary' onClick={this.handleSubmit}>
                                 Submit
-                            </FormBtn>
+                            </button>
+
                         </form>
                     </Row>
 
