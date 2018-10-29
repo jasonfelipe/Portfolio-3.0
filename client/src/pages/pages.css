@@ -10,6 +10,18 @@ body {
     height: 250px !important;
 }
 
+#jumbotron-title {
+    position: absolute;
+    top: 230px;
+    right:20px;
+}
+
+#jumbotron-time {
+    position: absolute;
+    top: 275px;
+    right: 30px;
+}
+
 .contentRow {
     border: 1px solid rgb(174, 237, 241);
 }
@@ -28,6 +40,7 @@ body {
 
 .header {
     margin: 25px;
+    margin-top: 90px;
     padding: 5px;
     border-bottom: 2px solid rgb(31, 202, 202)
 }
@@ -56,4 +69,9 @@ body {
 .mainNotes {
     font-size: 13pt;
     text-indent: 50px;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%
 }

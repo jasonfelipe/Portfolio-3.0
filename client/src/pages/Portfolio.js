@@ -20,7 +20,7 @@ class Portfolio extends Component {
                     <Row>
                         <div className='col-md-4'>
                             <Card
-                                src={Images[4 ]} alt={"marvel-collab"}
+                                src={Images[4]} alt={"marvel-collab"}
                                 cardTitle={'Marvel Collab Finder'}
                                 github='https://github.com/jasonfelipe/Marvel-Collab-Finder'
                                 projecturl="https://jasonfelipe.github.io/Marvel-Collab-Finder/"

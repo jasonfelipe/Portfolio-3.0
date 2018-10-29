@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import Me from '../assets/images/profile/its-me.jpg'
-import { List, ListItem } from '../components/List'
+import Me from '../assets/images/profile/its-me.jpg';
+import { List, ListItem } from '../components/List';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 import './pages.css'
 
@@ -14,22 +16,38 @@ class Home extends Component {
                 'Steak (Medium-Rare)',
                 'Traveling (Anywhere)',
                 "Pets (I don't have any... )"
-            ]
+            ],
+            jumbotronTitle: ["Welcome!", 'Currently Adapting...', 'Currently Studying...',],
+            today: ""
 
         }
     }
+
+    titleRandomizer = () => {
+        let title =  this.state.jumbotronTitle[Math.floor(Math.random() * Math.floor(this.state.jumbotronTitle.length))];
+        console.log(title)
+        return title;
+    }
+
+
+    randomNumber = () => {
+        let number = Math.floor(Math.random() * Math.floor(999999))
+        return number
+    }
+
 
 
     render() {
         return (
             <div>
                 <Jumbotron>
-                    <h1>Welcome</h1>
+                    <h1 id='jumbotron-title'>{this.titleRandomizer()}</h1>
+                    <Moment id='jumbotron-time' format='llll'/>
                 </Jumbotron>
                 <Container>
                     <Row>
                         <Col size='md-6'>
-                            <h1 className='header text-center'>Welcome to My Place!</h1>
+                            <h1 className='text-center'>Welcome to My Place!</h1>
                             <Row>
                                 <div className='center'>
                                     <img src={Me} id='mypicture' alt='me' />
