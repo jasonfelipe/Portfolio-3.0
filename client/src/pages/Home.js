@@ -40,9 +40,9 @@ class Home extends Component {
             showTitle: true,
             jumbotronTitles: [
                 'Welcome to Test Number #' + this.state.randomNumber,
-                "Welcome!",  
+                "Welcome!", 
                 'Currently Adapting...', 'Currently Studying...', 'Currently Dreaming...', "You're not alone...",
-                " お前はもう。。。", 'ジェイソン・フェリペ', '何！？',
+                " お前はもう。。。", 'ジェイソン・フェリペ', '何！？', 'こんにちは！', 
                 '⬇⬊➡ + 👊', '➡☆⬇⬊ + 2', '➡⬇⬊ + 👊', '↑↑↓↓←→←→BA', '⟲ + 👊'
             ],
         })
@@ -78,6 +78,12 @@ class Home extends Component {
                         in={this.state.showTitle}
                         classNames='pop'
                         timeout={5000}
+                        unmountOnExit
+                        onExited={() => {
+                            this.setState({
+                              currentTitle: 'Welcome!',
+                            });
+                          }}
                     >
                         <h1 id='jumbotron-title'>{this.state.currentTitle}</h1>
                     </CSSTransition>

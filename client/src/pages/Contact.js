@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../components/Grid";
+import { Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Jumbotron from "../components/Jumbotron";
-import { Input, FormBtn, TextArea } from "../components/Form";
+import { Input, TextArea } from "../components/Form";
 import API from "../utils/API";
 
 import './pages.css'
@@ -18,12 +18,34 @@ class Contact extends Component {
         }
     }
 
-    reset = () => {
+    componentDidMount() {
         this.setState({
             name: "",
             email: "",
             comment: "",
+            show: false,
+        });
+    }
+
+    showModal = () => {
+        this.setState({
+            show: true
         })
+    }
+
+    hideModal = () => {
+        this.setState({
+            show: false
+        })
+    }
+
+
+    resetForm = () => {
+        this.setState({
+            name: "",
+            email: "",
+            comment: "",
+        });
     }
 
     handleInputChange = event => {
@@ -35,15 +57,21 @@ class Contact extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        let comment = {
+        let post = {
             name: this.state.name,
             email: this.state.email,
             comment: this.state.comment
         }
-        API.sendComment(comment)
+
+        API.sendComment(post)
             .then(res => {
-                console.log(res);
-                this.reset();
+                this.setState({
+                    name: "",
+                    email: "",
+                    comment: "",
+                    show: true
+
+                })
             })
             .catch(err => console.log(err))
     };
@@ -65,7 +93,7 @@ class Contact extends Component {
                                 onChange={this.handleInputChange}
                                 name="name"
                                 placeholder="John Doe"
-                             />
+                            />
 
                             <Input
                                 value={this.state.email}
@@ -74,7 +102,7 @@ class Contact extends Component {
                                 placeholder="johndoe@email.com"
                             />
 
-                            <TextArea 
+                            <TextArea
                                 value={this.state.comment}
                                 onChange={this.handleInputChange}
                                 name="comment"
@@ -87,6 +115,30 @@ class Contact extends Component {
 
                         </form>
                     </Row>
+
+                    <div className='modal'>
+                        <div className='modal-content'>
+                            <div className='modal-header'>
+                                <h3 style={{ color: 'green' }} className='modal-title'>
+                                    Comment Created!
+                                </h3>
+                            </div>
+
+                            <div style={{ color: 'black' }} className='modal-body'>
+
+                                <p>Thanks you for your feedback!</p>
+                                <br/>
+                                <p>I appreciate it :)</p>
+
+
+                                <div className='modal-footer'>
+                                    <button className='btn btn-danger' onClick={this.hide}>Close</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </Container>
             </div>
