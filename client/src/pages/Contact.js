@@ -61,19 +61,15 @@ class Contact extends Component {
             name: this.state.name,
             email: this.state.email,
             comment: this.state.comment
-        }
+        };
 
         API.sendComment(post)
             .then(res => {
-                this.setState({
-                    name: "",
-                    email: "",
-                    comment: "",
-                    show: true
-
-                })
+                console.log(res);
+                this.resetForm();
+                this.showModal();
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     };
 
 
@@ -92,24 +88,28 @@ class Contact extends Component {
                                 value={this.state.name}
                                 onChange={this.handleInputChange}
                                 name="name"
-                                placeholder="John Doe"
+                                placeholder="Your Name (Required)"
                             />
 
                             <Input
                                 value={this.state.email}
                                 onChange={this.handleInputChange}
                                 name="email"
-                                placeholder="johndoe@email.com"
+                                placeholder="E-mail (Required)"
                             />
 
                             <TextArea
                                 value={this.state.comment}
                                 onChange={this.handleInputChange}
                                 name="comment"
-                                placeholder="Say something!"
+                                placeholder="Say something! (REQUIRED!)"
                             />
 
-                            <button className='btn btn-secondary' onClick={this.handleSubmit}>
+                            <button 
+                                className='btn btn-secondary' 
+                                onClick={this.handleSubmit}
+                                disabled={!this.state.name || !this.state.email || !this.state.comment}
+                            >
                                 Submit
                             </button>
 
@@ -123,20 +123,17 @@ class Contact extends Component {
                                     Comment Created!
                                 </h3>
                             </div>
-
                             <div style={{ color: 'black' }} className='modal-body'>
 
                                 <p>Thanks you for your feedback!</p>
                                 <br/>
                                 <p>I appreciate it :)</p>
 
-
                                 <div className='modal-footer'>
                                     <button className='btn btn-danger' onClick={this.hide}>Close</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
 

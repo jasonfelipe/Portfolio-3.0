@@ -26,6 +26,10 @@ body {
     border: 1px solid rgb(174, 237, 241);
 }
 
+textarea {
+    resize: none;
+}
+
 .parallax {
     background-image: url(../assets/images/backgrounds/sunset-ibaraki.jpg);
     background-attachment: fixed;
