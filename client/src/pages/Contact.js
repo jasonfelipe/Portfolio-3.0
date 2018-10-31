@@ -30,14 +30,14 @@ class Contact extends Component {
         this.setState({
             showModal: true
         });
-        console.log('Modal is: ' + this.state.show);
+        console.log('Modal is: ' + this.state.showModal);
     }
 
     hideModal = () => {
         this.setState({
             showModal: false
         });
-        console.log('Modal is: ' + this.state.show);
+        console.log('Modal is: ' + this.state.showModal);
     }
 
 
@@ -59,14 +59,15 @@ class Contact extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+
         let post = {
             name: this.state.name,
             email: this.state.email,
-            comment: this.state.comment
+            comment: this.state.comment,
         };
+        console.log('the post: ', post);
 
-
-        console.log('Firing API...')
+        console.log('Firing API...');
         API.sendComment(post)
             .then(res => {
                 console.log(res);
@@ -77,7 +78,7 @@ class Contact extends Component {
         console.log('Something should happen...')
     };
 
-
+    
     render() {
         return (
             <div>
@@ -134,7 +135,7 @@ class Contact extends Component {
                                 <p>I appreciate it :)</p>
 
                                 <div className='modal-footer'>
-                                    <button className='btn btn-danger' onClick={this.hide}>Close</button>
+                                    <button className='btn btn-danger' onClick={this.hideModal}>Close</button>
                                 </div>
                             </div>
                         </div>
