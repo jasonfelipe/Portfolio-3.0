@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+
+//Bootstrap based Containers
 import { Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import Jumbotron from "../components/Jumbotron";
 import { Input, TextArea } from "../components/Form";
+
+//For Modal
+import { Modal } from 'react-bootstrap'
+
+
+//The API
 import API from "../utils/API";
 
+//Personal assets
 import './pages.css'
 
 class Contact extends Component {
@@ -14,29 +21,23 @@ class Contact extends Component {
             name: "",
             email: "",
             comment: "",
-
+            showModal: false
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            name: "",
-            email: "",
-            comment: "",
-            show: false,
-        });
-    }
 
     showModal = () => {
         this.setState({
-            show: true
-        })
+            showModal: true
+        });
+        console.log('Modal is: ' + this.state.show);
     }
 
     hideModal = () => {
         this.setState({
-            show: false
-        })
+            showModal: false
+        });
+        console.log('Modal is: ' + this.state.show);
     }
 
 
@@ -46,6 +47,7 @@ class Contact extends Component {
             email: "",
             comment: "",
         });
+        console.log('Form reset!')
     }
 
     handleInputChange = event => {
@@ -63,6 +65,8 @@ class Contact extends Component {
             comment: this.state.comment
         };
 
+
+        console.log('Firing API...')
         API.sendComment(post)
             .then(res => {
                 console.log(res);
@@ -70,6 +74,7 @@ class Contact extends Component {
                 this.showModal();
             })
             .catch(err => console.log(err));
+        console.log('Something should happen...')
     };
 
 
@@ -77,7 +82,7 @@ class Contact extends Component {
         return (
             <div>
                 <Container>
-
+                
                     <h2 className='header'>
                         Contact Me!
                     </h2>
@@ -112,11 +117,10 @@ class Contact extends Component {
                             >
                                 Submit
                             </button>
-
                         </form>
                     </Row>
 
-                    <div className='modal'>
+                    <Modal show={this.state.showModal}>
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
@@ -125,7 +129,7 @@ class Contact extends Component {
                             </div>
                             <div style={{ color: 'black' }} className='modal-body'>
 
-                                <p>Thanks you for your feedback!</p>
+                                <p>Thank you for your feedback!</p>
                                 <br/>
                                 <p>I appreciate it :)</p>
 
@@ -134,7 +138,7 @@ class Contact extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Modal>
 
 
                 </Container>

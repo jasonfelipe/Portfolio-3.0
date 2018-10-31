@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default {
-    sendComment: comment => {
-        // console.log("Hey it hit in the API");
-        return axios.post("/api/comments", comment);
+    sendComment: post => {
+        console.log("Hey it hit in the API.js");
+        return axios.post("/api/comments", post);
     }
 };

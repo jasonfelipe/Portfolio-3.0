@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import Card from "../components/Card";
-import Images from "../utils/Images";
-import { CSSTransition } from 'react-transition-group';
 
+//Bootstrap based Containers
+import { Row, Container } from "../components/Grid";
+import Card from "../components/Card";
+
+//React CSS Animations
+
+
+//Personal Assets
+import Images from "../utils/Images";
 import './transitions.css';
 import './pages.css';
 
@@ -38,13 +42,7 @@ class Portfolio extends Component {
                     </h1>
 
                     <Row>
-
-                        <CSSTransition
-                            in={this.state.showTitle}
-                            classNames='pop'
-                            timeout={5000}
-                        >
-                            <div className='col-md-4'>
+                        <div className='col-md-4'>
                             <Card
                                 src={Images[4]} alt={"marvel-collab"}
                                 cardTitle={'Marvel Collab Finder'}
@@ -54,8 +52,7 @@ class Portfolio extends Component {
                                 and Ebay's API to search for characters' collaborations and their respective comics."
                             >
                             </Card>
-                            </div>
-                        </CSSTransition>
+                        </div>
 
                         <div className='col-md-4'>
                             <Card

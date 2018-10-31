@@ -9,8 +9,8 @@ const Card = props => {
             <p className='card-text'>{props.cardText}</p>
         </div>
         
-        <a target='_blank' href={props.github} className='btn btn-secondary'>Github</a>
-        <a target='_blank' href={props.projecturl} className='btn btn-primary'>Project Page</a>
+        <a target='_blank' rel='noopener noreferrer' href={props.github} className='btn btn-secondary'>Github</a>
+        <a target='_blank' rel='noopener noreferrer' href={props.projecturl} className='btn btn-primary'>Project Page</a>
 
         {props.children}
     </div>

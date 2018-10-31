@@ -2,19 +2,20 @@ const db = require("../models");
 
 module.exports = {
   sendComment: function (req, res) {
-    console.log(req.body);
-    const name = req.body.name;
-    const email = req.body.email;
-    const comment = req.body.comment;
-
+    console.log('Log from the controller!')
+    
+    const sentName = req.body.name;
+    const sentEmail = req.body.email;
+    const sentComment = req.body.comment;
+    
     db.Comment
       .create({
-        name: name,
-        email: email,
-        comment: comment
+        name: sentName,
+        email: sentEmail,
+        comment: sentComment
       })
-      .then(results => {
-        console.log(results);
+      .then(res => {
+        console.log(res);
       }).catch(err => console.log(err));
   }
 }

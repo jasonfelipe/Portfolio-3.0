@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//Schema for the Products with upcCode in our database.
+//For Comments in Contact page
 
 const commentSchema = new Schema({
   name: { type: String, required: true},

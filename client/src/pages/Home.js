@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+
+//Containers based off Bootstrap
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import Me from '../assets/images/profile/its-me.jpg';
 import { List, ListItem } from '../components/List';
+
+//Moment JS for React
 import Moment from 'react-moment';
 import 'moment-timezone';
+
+//React CSS Animations
 import { CSSTransition } from 'react-transition-group';
 
+//Personal Assets
+import Me from '../assets/images/profile/its-me.jpg';
 import './pages.css'
 import './transitions.css'
 
 class Home extends Component {
+    //Setting up the State
     constructor(props) {
         super(props);
         this.state = {
@@ -28,9 +36,11 @@ class Home extends Component {
         }
     }
 
+    //Puts this up before the page loads
     componentDidMount() {
         this.titleRandomizer();
     }
+
 
     titleRandomizer = () => {
         let title = this.state.jumbotronTitles[Math.floor(Math.random() * Math.floor(this.state.jumbotronTitles.length))];
@@ -40,28 +50,27 @@ class Home extends Component {
             showTitle: true,
             jumbotronTitles: [
                 'Welcome to Test Number #' + this.state.randomNumber,
-                "Welcome!", 
+                "Welcome!",
                 'Currently Adapting...', 'Currently Studying...', 'Currently Dreaming...', "You're not alone...",
-                " お前はもう。。。", 'ジェイソン・フェリペ', '何！？', 'こんにちは！', 
+                " お前はもう。。。", 'ジェイソン・フェリペ', '何！？', 'こんにちは！',
                 '⬇⬊➡ + 👊', '➡☆⬇⬊ + 2', '➡⬇⬊ + 👊', '↑↑↓↓←→←→BA', '⟲ + 👊'
             ],
         })
         this.changeTitle(5000);
     }
 
-
+    //For transitional purposes
     hideTitle = () => {
         this.setState({
             showTitle: false
         })
     }
-
     changeTitle = time => {
-        setTimeout(() => {this.hideTitle();}, 4000);
+        setTimeout(() => { this.hideTitle(); }, 4000);
         setTimeout(this.titleRandomizer, time)
     }
 
-
+    //Something extra for the title.
     randomNumber = () => {
         let number = Math.floor(Math.random() * Math.floor(999999))
         this.setState({
@@ -74,6 +83,8 @@ class Home extends Component {
         return (
             <div>
                 <Jumbotron>
+
+                    {/* CSS Animations */}
                     <CSSTransition
                         in={this.state.showTitle}
                         classNames='pop'
@@ -81,15 +92,19 @@ class Home extends Component {
                         unmountOnExit
                         onExited={() => {
                             this.setState({
-                              currentTitle: 'Welcome!',
+                                currentTitle: 'Welcome!',
                             });
-                          }}
+                        }}
                     >
                         <h1 id='jumbotron-title'>{this.state.currentTitle}</h1>
                     </CSSTransition>
+
+                    {/* Moment JS */}
                     <Moment id='jumbotron-time' format='llll' />
+
                 </Jumbotron>
                 <Container>
+                    {/* Begin Left Side Column */}
                     <Row>
                         <Col size='md-6'>
                             <h1 className='text-center'>Welcome to My Place!</h1>
@@ -119,8 +134,10 @@ class Home extends Component {
                                 </div>
                             </Row>
                         </Col>
+                        {/* End Left Side Column */}
 
 
+                        {/* Begin Right Side Column */}
                         <Col size='md-6'>
                             <Row>
                                 <h2 className='title-header'>Who Am I?</h2>
@@ -138,7 +155,8 @@ class Home extends Component {
                                     I was born in Vancouver, Canada, but currently reside as a proud Arizonanian. I've worked
                                     in Vancouver as an English tutor for exchange students trying to get an education, and I've
                                     also worked in Japan (Kashima, Ibaraki) for two years as a teacher for young children, high school students,
-                                    and new parents.
+                                    and new parents. As the world's technology for traveling and transportation gets more convenient, I see the need
+                                    for understanding and seeing other cultures as a very important aspect not just for work, but for life.
                                 </p>
                             </Row>
 
@@ -164,6 +182,7 @@ class Home extends Component {
                                 <a href='https://www.linkedin.com/in/jason-felipe-089558107/' rel='noopener noreferrer' target='_blank'>Linkedin</a>
                             </Row>
                         </Col>
+                        {/* End Right Side Column */}
                     </Row>
 
                 </Container>
