@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import { Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 
-//React CSS Animations
 
 
 //Personal Assets

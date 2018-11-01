@@ -5,14 +5,14 @@ import { Row, Container } from "../components/Grid";
 import { Input, TextArea } from "../components/Form";
 
 //For Modal
-import { Modal } from 'react-bootstrap'
+import { Modal } from 'reactstrap'
 
 
 //The API
 import API from "../utils/API";
 
 //Personal assets
-import './pages.css'
+import './pages.css';
 
 class Contact extends Component {
     constructor(props) {
@@ -21,24 +21,20 @@ class Contact extends Component {
             name: "",
             email: "",
             comment: "",
-            showModal: false
-        }
+            modal: false
+        };
+
+        this.toggle = this.toggle.bind(this)
     }
 
 
-    showModal = () => {
+    toggle() {
         this.setState({
-            showModal: true
+            modal: !this.state.modal
         });
-        console.log('Modal is: ' + this.state.showModal);
+        console.log('Modal is: ' + this.state.modal);
     }
 
-    hideModal = () => {
-        this.setState({
-            showModal: false
-        });
-        console.log('Modal is: ' + this.state.showModal);
-    }
 
 
     resetForm = () => {
@@ -47,7 +43,7 @@ class Contact extends Component {
             email: "",
             comment: "",
         });
-        console.log('Form reset!')
+        // console.log('Form reset!');
     }
 
     handleInputChange = event => {
@@ -65,25 +61,23 @@ class Contact extends Component {
             email: this.state.email,
             comment: this.state.comment,
         };
-        console.log('the post: ', post);
+        // console.log('the post: ', post);
 
-        console.log('Firing API...');
-        API.sendComment(post)
+        // console.log('Firing API...');
+        API.create(post)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.resetForm();
-                this.showModal();
-            })
-            .catch(err => console.log(err));
-        console.log('Something should happen...')
+                this.toggle();
+            }).catch(err => console.log(err));
+        // console.log('Something should happen...');
     };
 
-    
+
     render() {
         return (
             <div>
                 <Container>
-                
                     <h2 className='header'>
                         Contact Me!
                     </h2>
@@ -111,8 +105,8 @@ class Contact extends Component {
                                 placeholder="Say something! (REQUIRED!)"
                             />
 
-                            <button 
-                                className='btn btn-secondary' 
+                            <button
+                                className='btn btn-secondary'
                                 onClick={this.handleSubmit}
                                 disabled={!this.state.name || !this.state.email || !this.state.comment}
                             >
@@ -121,7 +115,7 @@ class Contact extends Component {
                         </form>
                     </Row>
 
-                    <Modal show={this.state.showModal}>
+                    <Modal show={this.state.modal}>
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
@@ -131,11 +125,11 @@ class Contact extends Component {
                             <div style={{ color: 'black' }} className='modal-body'>
 
                                 <p>Thank you for your feedback!</p>
-                                <br/>
+                                <br />
                                 <p>I appreciate it :)</p>
 
                                 <div className='modal-footer'>
-                                    <button className='btn btn-danger' onClick={this.hideModal}>Close</button>
+                                    <button className='btn btn-danger' onClick={this.reset}>Close</button>
                                 </div>
                             </div>
                         </div>
