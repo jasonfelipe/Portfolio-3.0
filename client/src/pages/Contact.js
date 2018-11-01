@@ -5,7 +5,7 @@ import { Row, Container } from "../components/Grid";
 import { Input, TextArea } from "../components/Form";
 
 //For Modal
-import { Modal } from 'reactstrap'
+import { Modal } from 'react-bootstrap'
 
 
 //The API
@@ -17,27 +17,39 @@ import './pages.css';
 class Contact extends Component {
     constructor(props) {
         super(props);
+        this.showModal = this.showModal.bind(this)
+        this.hideModal = this.hideModal.bind(this)
         this.state = {
             name: "",
             email: "",
             comment: "",
-            modal: false
+            show: false
         };
-
-        this.toggle = this.toggle.bind(this)
     }
 
 
-    toggle() {
+    showModal() {
+        this.modifyBootstrap();
         this.setState({
-            modal: !this.state.modal
+            show: true
         });
-        console.log('Modal is: ' + this.state.modal);
+        console.log('Modal is: ' + this.state.show);
     }
 
+    modifyBootstrap(){
+        var element = document.getElementById('modal');
+        console.log(element);
+        element.classList.remove('fade')
+    }
 
+    hideModal() {
+        this.setState({
+            show: false
+        });
+        console.log('Modal is: ' + this.state.show);
+    }
 
-    resetForm = () => {
+    resetForm() {
         this.setState({
             name: "",
             email: "",
@@ -68,7 +80,8 @@ class Contact extends Component {
             .then(res => {
                 // console.log(res);
                 this.resetForm();
-                this.toggle();
+                this.showModal();
+
             }).catch(err => console.log(err));
         // console.log('Something should happen...');
     };
@@ -115,7 +128,7 @@ class Contact extends Component {
                         </form>
                     </Row>
 
-                    <Modal show={this.state.modal}>
+                    <Modal id='modal' show={this.state.show}>
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
@@ -129,7 +142,7 @@ class Contact extends Component {
                                 <p>I appreciate it :)</p>
 
                                 <div className='modal-footer'>
-                                    <button className='btn btn-danger' onClick={this.reset}>Close</button>
+                                    <button className='btn btn-danger' onClick={this.hideModal}>Close</button>
                                 </div>
                             </div>
                         </div>
