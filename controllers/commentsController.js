@@ -12,7 +12,7 @@ module.exports = {
       .create({
         name: sentName,
         email: sentEmail,
-        comment: sentComment
+        comment: sentComment,
       }).then(res => 
         console.log(res)
       ).catch(err => console.log(err));
