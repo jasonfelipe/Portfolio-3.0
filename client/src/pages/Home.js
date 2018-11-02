@@ -107,7 +107,7 @@ class Home extends Component {
                     {/* Begin Left Side Column */}
                     <Row>
                         <Col size='md-6'>
-                            <h1 className='text-center'>Welcome to My Place!</h1>
+                            <h1 className='center'>Welcome to My Place!</h1>
                             <Row>
                                 <div className='center'>
                                     <img src={Me} id='mypicture' alt='me' />
@@ -121,7 +121,7 @@ class Home extends Component {
                                 </p>
                             </Row>
 
-                            <h3 className='text-center'>Likes</h3>
+                            <h3 id='leftSideTitle'>Likes</h3>
                             <Row>
                                 <div id='likes' className='center'>
                                     <List>

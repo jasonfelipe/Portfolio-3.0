@@ -17,29 +17,22 @@ import './pages.css';
 class Contact extends Component {
     constructor(props) {
         super(props);
-        this.showModal = this.showModal.bind(this)
-        this.hideModal = this.hideModal.bind(this)
         this.state = {
             name: "",
             email: "",
             comment: "",
             show: false
         };
+        this.hideModal = this.hideModal.bind(this)
+        this.showModal = this.showModal.bind(this)
     }
 
 
     showModal() {
-        this.modifyBootstrap();
         this.setState({
             show: true
         });
         console.log('Modal is: ' + this.state.show);
-    }
-
-    modifyBootstrap(){
-        var element = document.getElementById('modal');
-        console.log(element);
-        element.classList.remove('fade')
     }
 
     hideModal() {
@@ -128,7 +121,7 @@ class Contact extends Component {
                         </form>
                     </Row>
 
-                    <Modal id='modal' show={this.state.show}>
+                    <Modal className='modal fade' show={this.state.show}>
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
@@ -147,8 +140,6 @@ class Contact extends Component {
                             </div>
                         </div>
                     </Modal>
-
-
                 </Container>
             </div>
         )
