@@ -4,6 +4,7 @@ nav.navbar.navbar-default {
 
 .navbar {
   margin: 0;
+  background-color: white;
 }
 
 .navbar-nav {
@@ -14,6 +15,7 @@ nav.navbar.navbar-default {
 }
 
 .nav-item {
+  list-style-type: none;
   margin: 45px;
 }
 

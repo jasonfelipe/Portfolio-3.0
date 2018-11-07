@@ -88,8 +88,7 @@ class Portfolio extends Component {
                                 cardTitle={'Street Fighter Click Game'}
                                 github='https://github.com/jasonfelipe/clickygame'
                                 projecturl='https://jfelipe-sfclickygame.herokuapp.com/'
-                                cardText="A video game character search that uses the giphy API to bring up gifs, 
-                                and the Giantbomb API to bring up a small biography of the character."
+                                cardText="A simple Street Fighter themed Click Game made with React"
                             >
                             </Card>
                         </div>

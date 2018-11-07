@@ -1,9 +1,9 @@
 .card {
-    margin: 10px;
-    width: 20rem;
-    min-height: 35rem;
-    border: 1px solid gray;
+    padding: 5px;
+    border: 1px solid black;    
+    margin: 20px;
 }
+
 
 .card-img-top {
     height: 100%;
@@ -15,11 +15,21 @@
     background-color: rgb(16, 134, 134);
     border-color: rgb(16, 134, 134);
     color: white !important;
+    width: 100%;
+}
 
+.btn {
+    margin-top: 5px;
 }
 
 .btn-secondary {
     background-color: black;
     border-color: black;
     color: white !important;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: gray;
+    border-color: gray;
 }
