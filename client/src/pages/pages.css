@@ -3,6 +3,10 @@ body {
     background-color: whitesmoke;
 }
 
+p {
+    font-size: 14pt;
+}
+
 .jumbotron {
     color: rgb(31, 202, 202);
     background-color: white;
@@ -89,4 +93,25 @@ a {
 
 #leftSideTitle {
     margin-left: 180px;
+}
+
+
+@media only screen and (max-width: 640px){
+
+    #leftSideTitle {
+        margin-left: 150px;
+        display: block;
+    }
+
+
+    .parallax {
+        background-position: 60% 60%;    
+    }
+
+    #jumbotron-title {
+        position: absolute;
+        top: 200px;
+        right:20px;
+    }
+    
 }

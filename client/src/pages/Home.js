@@ -16,6 +16,7 @@ import { CSSTransition } from 'react-transition-group';
 import Me from '../assets/images/profile/its-me.jpg';
 import './pages.css'
 import './transitions.css'
+import '../components/TxtType'
 
 class Home extends Component {
     //Setting up the State
@@ -191,4 +192,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default Home;

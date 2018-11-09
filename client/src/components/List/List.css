@@ -8,6 +8,9 @@
   margin-left: 80px;
 }
 
+
+
+
 .list-overflow-container ul {
   margin: 0;
 }
@@ -32,4 +35,12 @@
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+}
+
+@media only screen and (max-width: 640px){
+.list-overflow-container {
+  margin-left: 100px;
+}
+
+
 }

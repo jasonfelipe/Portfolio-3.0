@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+
 
 
 
@@ -22,6 +24,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route path='/portfolio' component={Portfolio} />
         <Route path='/contact' component={Contact} />
+        <Route path='/blog' component={Blog} />
       </Switch>
       </Wrapper>
       <Footer />
