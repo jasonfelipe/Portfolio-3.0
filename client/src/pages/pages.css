@@ -68,7 +68,7 @@ textarea {
     text-decoration-color: rgb(31, 202, 202);
 }
 
-.smallNotes {
+.small-notes {
     font-size: 10pt;
 }
 
@@ -77,7 +77,7 @@ textarea {
     display: block;
 }
 
-.mainNotes {
+.main-notes {
     font-size: 13pt;
     text-indent: 50px;
 }
@@ -91,14 +91,14 @@ a {
     font-size: 14pt;
 }
 
-#leftSideTitle {
+#left-side-title {
     margin-left: 180px;
 }
 
 
 @media only screen and (max-width: 640px){
 
-    #leftSideTitle {
+    #left-side-title {
         margin-left: 150px;
         display: block;
     }
@@ -115,3 +115,23 @@ a {
     }
     
 }
+
+/* Blog Area Start */
+
+.blog-header{
+    margin: 30px;
+}
+
+.blog-box{
+    border:1px solid grey;
+    padding: 20px;
+}
+
+.blog-date {
+    font-size: 18px;
+}
+
+.blog-link:hover {
+    color: black;
+}
+

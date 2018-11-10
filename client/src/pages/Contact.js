@@ -32,14 +32,14 @@ class Contact extends Component {
         this.setState({
             show: true
         });
-        console.log('Modal is: ' + this.state.show);
+        // console.log('Modal is: ' + this.state.show);
     }
 
     hideModal() {
         this.setState({
             show: false
         });
-        console.log('Modal is: ' + this.state.show);
+        // console.log('Modal is: ' + this.state.show);
     }
 
     resetForm() {
@@ -61,15 +61,15 @@ class Contact extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        let post = {
+        let message = {
             name: this.state.name,
             email: this.state.email,
             comment: this.state.comment,
         };
-        // console.log('the post: ', post);
+        // console.log('the message: ', message);
 
         // console.log('Firing API...');
-        API.create(post)
+        API.create(message)
             .then(res => {
                 // console.log(res);
                 this.resetForm();

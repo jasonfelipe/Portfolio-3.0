@@ -9,7 +9,7 @@ module.exports = {
     const sentEmail = req.body.email;
     const sentComment = req.body.comment;
     
-    db.Comment
+    db.Message
       .create({
         name: sentName,
         email: sentEmail,

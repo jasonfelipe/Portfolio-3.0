@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 //For Comments in Contact page
 
-const commentSchema = new Schema({
+const messageSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   comment: { type: String, required: true },
   date: { type: Date, default: Date.now }
 });
 
-const Comment = mongoose.model("Comment", commentSchema);
+const Message = mongoose.model("Contact", messageSchema);
 
-module.exports = Comment;
+module.exports = Message;

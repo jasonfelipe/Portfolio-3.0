@@ -15,14 +15,24 @@ class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [{
-                title: 'default',
-                text: 'default',
-                date: '11/08/2018',
-                comments: [],
-            }]
+            posts: []
         }
     }
+
+    componentDidMount() {
+        this.setState({
+            posts: [{
+                title: 'default',
+                text:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                date: "11/08/2018",
+                images:[],
+                comments: []
+            }]
+        })
+    }
+
+
     render() {
         return (
             <div>
@@ -39,18 +49,25 @@ class Blog extends Component {
                             {this.state.posts.map((post, index) => {
                                 return <div>
 
-                                <Row key={index} >
-                                    <h2>{post.title}</h2>
-                                    <h3>{post.date}</h3>
-                                    <p>{post.text}</p>
-                                </Row>
+                                    {/* Posts here */}
+                                    <Row key={index} >
+                                        <div className='blog-box'>
+                                            <div className='blog-header'>
+                                                <h2 className='blog-link title-header'>{post.title}</h2>
+                                                <h4>{post.date}</h4>
+                                            </div>
+
+                                            <p className='main-notes'>{post.text}</p>
+                                        </div>
+                                    </Row>
+
+                                    {/* Add Comment section here */}
+                                    <Row>
+
+                                    </Row>
 
 
-                                <Row>
-
-                                </Row>
-
-                                </div> 
+                                </div>
                             })}
                         </Row>
 

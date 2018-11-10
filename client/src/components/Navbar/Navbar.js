@@ -34,17 +34,6 @@ const Navbar = props => (
           </Link>
         </li>
         <li
-          className={
-            window.location.pathname === "/contact"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/contact" className="nav-link">
-            Contact
-          </Link>
-        </li>
-        <li
           className= {
             window.location.pathname === "/blog"
               ? "nav-item active"
@@ -55,6 +44,18 @@ const Navbar = props => (
             Blog
           </Link>
         </li>
+        <li
+          className={
+            window.location.pathname === "/contact"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
+        </li>
+        
       </ul>
     </div>
   </nav>

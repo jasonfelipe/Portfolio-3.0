@@ -115,14 +115,14 @@ class Home extends Component {
                                 </div>
                             </Row>
                             <Row>
-                                <p className='smallNotes'>
+                                <p className='small-notes'>
                                     Born on: 11/08/1992
                                     <br />
                                     Born in: Vancouver, Canada (Dual Citizenship in CA and US)
                                 </p>
                             </Row>
 
-                            <h3 id='leftSideTitle'>Likes</h3>
+                            <h3 id='left-side-title'>Likes</h3>
                             <Row>
                                 <div id='likes' className='center'>
                                     <List>
@@ -142,7 +142,7 @@ class Home extends Component {
                         <Col size='md-6'>
                             <Row>
                                 <h2 className='title-header'>Who Am I?</h2>
-                                <p className='mainNotes'>
+                                <p className='main-notes'>
                                     Hello! I'm Jason Felipe and I'm an experienced teacher and tutor for a variety of topics,
                                     including: ESL, front-end development, and back-end development, and Javascript. I am currently
                                     employed by University of Arizona as a teacher's aide for Trilogy Education. I will
@@ -152,7 +152,7 @@ class Home extends Component {
 
                             <Row>
                                 <h2 className='title-header'>Globally Focused</h2>
-                                <p className='mainNotes'>
+                                <p className='main-notes'>
                                     I was born in Vancouver, Canada, but currently reside as a proud Arizonanian. I've worked
                                     in Vancouver as an English tutor for exchange students trying to get an education, and I've
                                     also worked in Japan (Kashima, Ibaraki) for two years as a teacher for young children, high school students,
@@ -163,7 +163,7 @@ class Home extends Component {
 
                             <Row>
                                 <h2 className='title-header'>Always Learning</h2>
-                                <p className='mainNotes'>
+                                <p className='main-notes'>
                                     Coding, like any other language, changes every single day. For example in the English language, today's memes and slang could be
                                     tomorrow's anachronistic sayings. On the other hand, some picture with text, or a ten-second video can become
                                     the next viral thing on Earth!
