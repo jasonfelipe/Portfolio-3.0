@@ -35,11 +35,6 @@
     display: inline-block;
 }
 
-.blog-box:hover {
-    border-color: rgb(31, 202, 202);
-}
-
-.blog-box:hover h2 {
+.blog-title:hover {
     color: black;
 }
-

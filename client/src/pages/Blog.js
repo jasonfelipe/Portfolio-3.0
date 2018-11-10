@@ -49,10 +49,11 @@ class Blog extends Component {
 
     getPost = event => {
         event.preventDefault();
-        // const value = event.target.value
+        const value = event.target.value
         // console.log('Hey you clicked ', event.target);
 
-        console.log(event.target)
+        console.log(value);
+
 
         // const title = document.getElementsById('title-header')
         // console.log(title);
@@ -75,10 +76,10 @@ class Blog extends Component {
                                 return <Row key={index}>
                                     <div 
                                         className='blog-box'
-                                        onClick={this.getPost}
                                     >
                                         <div className='blog-header'>
                                             <h2
+                                                onClick={this.getPost}
                                                 className='blog-title'
                                             >
                                             {post.title}
