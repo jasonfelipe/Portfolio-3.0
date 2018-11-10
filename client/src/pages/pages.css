@@ -63,6 +63,7 @@ textarea {
 }
 
 .title-header {
+    width: fit-content;
     color: rgb(145, 160, 157);
     text-decoration: underline;
     text-decoration-color: rgb(31, 202, 202);
@@ -124,6 +125,7 @@ a {
 
 .blog-box{
     border:1px solid grey;
+    margin: 10px;
     padding: 20px;
 }
 

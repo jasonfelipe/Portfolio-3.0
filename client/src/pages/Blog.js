@@ -26,12 +26,22 @@ class Blog extends Component {
                 text:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 date: "11/08/2018",
-                images:[],
+                images: [],
                 comments: []
-            }]
+            },
+            {
+                title: "Test 2",
+                date: Date.now(),
+                text: "test 2",
+            }
+        ]
         })
     }
 
+    getPost = event => {
+        event.preventDefault();
+        console.log('Hey you clicked ', event.target);
+    }
 
     render() {
         return (
@@ -47,27 +57,19 @@ class Blog extends Component {
                     {this.state.posts.length ? (
                         <Row>
                             {this.state.posts.map((post, index) => {
-                                return <div>
-
-                                    {/* Posts here */}
-                                    <Row key={index} >
+                                return <Row key={index}>
                                         <div className='blog-box'>
                                             <div className='blog-header'>
-                                                <h2 className='blog-link title-header'>{post.title}</h2>
-                                                <h4>{post.date}</h4>
+                                                <h2 
+                                                    className='blog-link title-header'
+                                                    onClick={this.getPost}
+                                                >{post.title}</h2>
+                                                <Moment format="MM/DD/YYYY">{post.date}</Moment>
                                             </div>
 
                                             <p className='main-notes'>{post.text}</p>
                                         </div>
                                     </Row>
-
-                                    {/* Add Comment section here */}
-                                    <Row>
-
-                                    </Row>
-
-
-                                </div>
                             })}
                         </Row>
 

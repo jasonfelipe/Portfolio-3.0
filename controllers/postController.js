@@ -6,7 +6,7 @@ module.exports = {
     
     
     const title = req.body.title;
-    const date = date.now;
+    const date = date.now();
     const text = req.body.text;
     
     db.Post
