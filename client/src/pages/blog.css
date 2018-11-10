@@ -1,0 +1,45 @@
+
+.blog-header{
+    margin: 20px;
+}
+
+.blog-box{
+    border:1px solid grey;
+    margin: 10px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.blog-date {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.blog-title {
+    color: rgb(145, 160, 157);
+    text-decoration: underline;
+    text-decoration-color: rgb(31, 202, 202);
+}
+
+.blog-text {
+    font-size: 13pt;
+    text-indent: 50px;
+}
+
+
+.blog-link {
+    border: none;
+    background-color: inherit;
+    font-size: 32px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.blog-box:hover {
+    border-color: rgb(31, 202, 202);
+}
+
+.blog-box:hover h2 {
+    color: black;
+}
+

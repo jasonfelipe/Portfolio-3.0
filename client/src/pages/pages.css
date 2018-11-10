@@ -63,7 +63,6 @@ textarea {
 }
 
 .title-header {
-    width: fit-content;
     color: rgb(145, 160, 157);
     text-decoration: underline;
     text-decoration-color: rgb(31, 202, 202);
@@ -116,24 +115,3 @@ a {
     }
     
 }
-
-/* Blog Area Start */
-
-.blog-header{
-    margin: 30px;
-}
-
-.blog-box{
-    border:1px solid grey;
-    margin: 10px;
-    padding: 20px;
-}
-
-.blog-date {
-    font-size: 18px;
-}
-
-.blog-link:hover {
-    color: black;
-}
-
