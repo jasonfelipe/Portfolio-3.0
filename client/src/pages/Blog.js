@@ -13,10 +13,19 @@ import { Modal } from 'react-bootstrap'
 //Personal Assets
 import './blog.css'
 
+
+
+// TO DO -
+// Hook up database to this:
+// Click on Title of Post -> Searches Title in Database -> Gets Post from Database -> Puts Post into Modal -> Shows Modal on Website. 
+//Potential problems => Same Title results in multiple posts. 
+
+
 class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            modal: false,
             posts: [],
             clickedPost: {
                 title: "",
@@ -33,7 +42,11 @@ class Blog extends Component {
             posts: [{
                 title: 'default',
                 text:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "Lorem ipsum dolor sit amet, " +
+                    "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " + 
+                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+                    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " + 
+                    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",   
                 date: "11/08/2018",
                 images: [],
                 comments: []
@@ -58,6 +71,19 @@ class Blog extends Component {
         // const title = document.getElementsById('title-header')
         // console.log(title);
     }
+
+    showModal = () => {
+        this.setState({
+            modal: true
+        })
+    }
+
+    hideModal = () => {
+        this.setState({
+            modal: false
+        })
+    }
+
 
     render() {
         return (
@@ -105,17 +131,17 @@ class Blog extends Component {
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
-                                    {}
+                                    {/* Place Title Here */}
+                                    Placeholder title
                                 </h3>
                             </div>
                             <div style={{ color: 'black' }} className='modal-body'>
 
-                                <p>Thank you for your feedback!</p>
-                                <br />
-                                <p>I appreciate it :)</p>
-
+                                    {/* Place Blog Post Body Here */}
+                                    Placeholder body
                                 <div className='modal-footer'>
                                     <button className='btn btn-danger' onClick={this.hideModal}>Close</button>
+                                    <button className='btn btn-success'>Show Comments</button>
                                 </div>
                             </div>
                         </div>
