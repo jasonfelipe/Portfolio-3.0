@@ -108,7 +108,7 @@ class Home extends Component {
                     {/* Begin Left Side Column */}
                     <Row>
                         <Col size='md-6'>
-                            <h1 className='center'>Welcome to My Place!</h1>
+                            <h1 className='center'>My Base On The Internet!</h1>
                             <Row>
                                 <div className='center'>
                                     <img src={Me} id='mypicture' alt='me' />

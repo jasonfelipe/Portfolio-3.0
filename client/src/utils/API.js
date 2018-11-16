@@ -1,8 +1,12 @@
 import axios from "axios";
 
 export default {
-    create: post => {
+    createMessage: message => {
         // console.log("Hey it hit in the API.js");
-        return axios.post("/api/contacts", post);
-    }
+        return axios.post("/api/contacts", message);
+    },
+    getPosts: post => {
+        return axios.get('/api/posts', post);
+    },
+
 };

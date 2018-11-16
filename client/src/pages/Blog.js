@@ -12,6 +12,7 @@ import { Modal } from 'react-bootstrap'
 
 //Personal Assets
 import './blog.css'
+import API from "../utils/API";
 
 
 
@@ -58,9 +59,10 @@ class Blog extends Component {
             }
             ]
         })
+        this.getPosts();
     }
 
-    getPost = event => {
+    getClickedPost = event => {
         event.preventDefault();
         const value = event.target.value
         // console.log('Hey you clicked ', event.target);
@@ -71,6 +73,15 @@ class Blog extends Component {
         // const title = document.getElementsById('title-header')
         // console.log(title);
     }
+
+    getPosts = () => {
+        API.getPosts()
+        .then(res => {
+            console.log('Response of getposts', res);
+        })
+        .catch(err => console.log(err))
+    }
+
 
     showModal = () => {
         this.setState({
@@ -83,6 +94,8 @@ class Blog extends Component {
             modal: false
         })
     }
+
+    
 
 
     render() {
@@ -105,7 +118,7 @@ class Blog extends Component {
                                     >
                                         <div className='blog-header'>
                                             <h2
-                                                onClick={this.getPost}
+                                                onClick={this.getClickedPost}
                                                 className='blog-title'
                                             >
                                             {post.title}

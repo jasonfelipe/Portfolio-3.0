@@ -9,12 +9,6 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 
-
-
-
-
-
-
 const App = () => (
   <Router>
     <div>

@@ -69,7 +69,7 @@ class Contact extends Component {
         // console.log('the message: ', message);
 
         // console.log('Firing API...');
-        API.create(message)
+        API.createMessage(message)
             .then(res => {
                 // console.log(res);
                 this.resetForm();
