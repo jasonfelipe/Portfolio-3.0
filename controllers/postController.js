@@ -20,8 +20,7 @@ module.exports = {
   },
 
   getAll: function(req, res) {
-    console.log('Log from the controller');
-    
+    console.log('Log from the controller');    
     db.Post
         .find({})
         .then(dbModel => res.json(dbModel))

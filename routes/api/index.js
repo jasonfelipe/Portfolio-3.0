@@ -4,6 +4,7 @@ const postRoutes = require('./posts');
 
 // User routes
 router.use('/messages', messageRoutes);
-router.use('/post', postRoutes);
+router.use('/posts', postRoutes);
 
 module.exports = router;
+

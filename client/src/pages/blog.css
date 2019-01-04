@@ -19,6 +19,7 @@
     color: rgb(145, 160, 157);
     text-decoration: underline;
     text-decoration-color: rgb(31, 202, 202);
+    width: fit-content;
 }
 
 .blog-text {
@@ -37,4 +38,5 @@
 
 .blog-title:hover {
     color: black;
+    cursor: pointer;
 }

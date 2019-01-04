@@ -114,4 +114,22 @@ a {
         right:20px;
     }
     
+    #mypicture {
+        padding-left: 10px;
+        width: 360px;
+        height: 240px;
+        margin: 0 auto;
+    }
+
+    .title-header{
+        padding-left: 15px;
+    }
+
+    .main-notes {
+        padding: 10px;
+    }
+
+    a{
+        padding-left: 50px;
+    }
 }

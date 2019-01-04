@@ -44,3 +44,10 @@ nav.navbar.navbar-default {
   font-weight: 600; 
   color: teal; 
 }
+
+@media only screen and (max-width: 640px){
+.navbar-nav {
+  display:none;
+}
+
+}
