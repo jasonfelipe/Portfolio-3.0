@@ -11,9 +11,9 @@ const Navbar = props => (
     <div>
       <ul className="navbar-nav">
         <li
-          className= {
+          className={
             window.location.pathname === "/" ||
-            window.location.pathname === "/home"
+              window.location.pathname === "/home"
               ? "nav-item active"
               : "nav-item"
           }
@@ -34,7 +34,7 @@ const Navbar = props => (
           </Link>
         </li>
         <li
-          className= {
+          className={
             window.location.pathname === "/blog"
               ? "nav-item active"
               : "nav-item"
@@ -55,25 +55,67 @@ const Navbar = props => (
             Contact
           </Link>
         </li>
-        
+
       </ul>
 
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Stuff <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
+      <li className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Stuff<span className="caret"></span></a>
+        <ul className="dropdown-menu">
+
+          <li className={
+            window.location.pathname === "/"
+              ? "dropdown-link active"
+              : "dropdown-link"
+          }
+          >
+            <Link to="/" className="dropdown-link">
+              Home
+            </Link>
+          </li>
+
+          <li className={
+            window.location.pathname === "/portfolio"
+              ? "dropdown-link active"
+              : "dropdown-link"
+          }
+          >
+            <Link to="/portfolio" className="dropdown-link">
+              Portfolio
+            </Link>
+          </li>
+
+          <li className={
+            window.location.pathname === "/blog"
+              ? "dropdown-link active"
+              : "dropdown-link"
+          }
+          >
+            <Link to="/blog" className="dropdown-link">
+              Blog
+            </Link>
+          </li>
+
+          <li role="separator" className="divider"></li>
+
+          <li className={
+            window.location.pathname === "/contact"
+              ? "dropdown-link active"
+              : "dropdown-link"
+          }
+          >
+            <Link to="/contact" className="dropdown-link">
+              Contact Page
+            </Link>
+          </li>
+          <li><a target="_blank" href="https://github.com/jasonfelipe" className='dropdown-link'>My Github</a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/jason-felipe-089558107/" className='dropdown-link'>My Linkedin</a></li>
+
+        </ul>
       </li>
-    
+
     </div>
   </nav>
-  
+
 );
 
 

@@ -45,9 +45,26 @@ nav.navbar.navbar-default {
   color: teal; 
 }
 
-@media only screen and (max-width: 640px){
-.navbar-nav {
+.dropdown-link:active {
+  background-color: black !important;
+  color: teal;
+}
+
+.dropdown {
   display:none;
 }
+
+
+@media only screen and (max-width: 640px){
+  .navbar-nav {
+    display:none;
+  }
+
+  .dropdown {
+    list-style-type: none;
+    position: absolute;
+    right: 15%;
+    top: 10px; 
+  }
 
 }
