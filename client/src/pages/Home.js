@@ -29,6 +29,13 @@ class Home extends Component {
                 'Traveling (Anywhere)',
                 "Pets (I don't have any... )"
             ],
+            skills: [
+                'React',
+                'Mongo DB',
+                'Node.js',
+                'jQuery',
+                'Currently learning Python'
+            ],
             jumbotronTitles: ['Welcome!'],
             currentTitle: "",
             showTitle: false,
@@ -122,6 +129,20 @@ class Home extends Component {
                                 </p>
                             </Row>
 
+                            <h3 id='left-side-title'>Skills</h3>
+                            <Row>
+                                <div id='skills' className='center'>
+                                    <List>
+                                        {this.state.skills.map(skills => {
+                                            return <ListItem key={skills}>
+                                                {skills}
+                                            </ListItem>
+                                        })}
+
+                                    </List>
+                                </div>
+                            </Row>
+
                             <h3 id='left-side-title'>Likes</h3>
                             <Row>
                                 <div id='likes' className='center'>
@@ -135,6 +156,8 @@ class Home extends Component {
                                 </div>
                             </Row>
                         </Col>
+
+
                         {/* End Left Side Column */}
 
 
@@ -144,7 +167,7 @@ class Home extends Component {
                                 <h2 className='title-header'>Who Am I?</h2>
                                 <p className='main-notes'>
                                     Hello! I'm Jason Felipe and I'm an experienced teacher and tutor for a variety of topics,
-                                    including: ESL, front-end development, and back-end development, and Javascript. I am currently
+                                    including: ESL, front-end and back-end development, and Javascript. I am currently
                                     employed by University of Arizona as a teacher's aide for Trilogy Education. I will
                                     always and forever will be a learner and a teacher.
                                 </p>

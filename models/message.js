@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//For Comments in Contact page
+//For Messages in Contact page
 
 const messageSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
-  comment: { type: String, required: true },
+  message: { type: String, required: true },
   date: { type: Date, default: Date.now }
 });
 
-const Message = mongoose.model("Contact", messageSchema);
+const Message = mongoose.model("Message", messageSchema);
 
 module.exports = Message;

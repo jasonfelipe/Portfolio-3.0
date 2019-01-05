@@ -1,4 +1,4 @@
 module.exports = {
-    Contact: require("./message")
+    Message: require("./message")
   };
   

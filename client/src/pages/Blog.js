@@ -55,7 +55,10 @@ class Blog extends Component {
             {
                 title: "Test 2",
                 date: Date.now(),
-                text: "test 2",
+                text: "This is a test of the second blog post.  " + 
+                      "Hopefully someday I'll build in a fully functional blog!",
+                images: [],
+                comments: []
             }
             ]
         })

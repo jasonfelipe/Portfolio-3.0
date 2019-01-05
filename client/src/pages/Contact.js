@@ -20,7 +20,7 @@ class Contact extends Component {
         this.state = {
             name: "",
             email: "",
-            comment: "",
+            message: "",
             show: false
         };
         this.hideModal = this.hideModal.bind(this)
@@ -46,7 +46,7 @@ class Contact extends Component {
         this.setState({
             name: "",
             email: "",
-            comment: "",
+            message: "",
         });
         // console.log('Form reset!');
     }
@@ -64,14 +64,14 @@ class Contact extends Component {
         let message = {
             name: this.state.name,
             email: this.state.email,
-            comment: this.state.comment,
+            message: this.state.message,
         };
         // console.log('the message: ', message);
 
-        // console.log('Firing API...');
+        console.log('Firing API...');
         API.createMessage(message)
             .then(res => {
-                // console.log(res);
+                console.log(res);
                 this.resetForm();
                 this.showModal();
 
@@ -105,16 +105,16 @@ class Contact extends Component {
                             />
 
                             <TextArea
-                                value={this.state.comment}
+                                value={this.state.message}
                                 onChange={this.handleInputChange}
-                                name="comment"
+                                name="message"
                                 placeholder="Say something! (REQUIRED!)"
                             />
 
                             <button
                                 className='btn btn-secondary'
                                 onClick={this.handleSubmit}
-                                disabled={!this.state.name || !this.state.email || !this.state.comment}
+                                disabled={!this.state.name || !this.state.email || !this.state.message}
                             >
                                 Submit
                             </button>
@@ -125,13 +125,12 @@ class Contact extends Component {
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h3 style={{ color: 'green' }} className='modal-title'>
-                                    Comment Created!
+                                    Message Sent!
                                 </h3>
                             </div>
                             <div style={{ color: 'black' }} className='modal-body'>
 
-                                <p>Thank you for your feedback!</p>
-                                <br />
+                                <p>Thanks for the message!</p>
                                 <p>I appreciate it :)</p>
 
                                 <div className='modal-footer'>
