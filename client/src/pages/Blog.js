@@ -49,8 +49,9 @@ class Blog extends Component {
                 comments: []
             }
             ]
-        })
-        this.getPosts();
+        });
+        
+        // this.getPosts();
     }
 
     getClickedPost = event => {
