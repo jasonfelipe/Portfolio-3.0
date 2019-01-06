@@ -45,9 +45,9 @@ nav.navbar.navbar-default {
   color: teal; 
 }
 
-.dropdown-link:active {
+.dropdown-menu>.active>a {  
   background-color: black !important;
-  color: teal;
+  color: rgb(130, 192, 201);
 }
 
 .dropdown {

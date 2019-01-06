@@ -198,12 +198,11 @@ class Home extends Component {
                                </p>
                             </Row>
 
-                            <h4>Check out my stuff!</h4>
                             <Row>
-                                <a href='https://github.com/jasonfelipe/' rel='noopener noreferrer' target='_blank'>Github</a>
+                                <a href='https://github.com/jasonfelipe/' rel='noopener noreferrer' target='_blank'>My Github Page</a>
                             </Row>
                             <Row>
-                                <a href='https://www.linkedin.com/in/jason-felipe-089558107/' rel='noopener noreferrer' target='_blank'>Linkedin</a>
+                                <a href='https://www.linkedin.com/in/jason-felipe-089558107/' rel='noopener noreferrer' target='_blank'>My Linkedin Page</a>
                             </Row>
                         </Col>
                         {/* End Right Side Column */}
