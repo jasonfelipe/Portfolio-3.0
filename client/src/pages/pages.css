@@ -7,6 +7,10 @@ p {
     font-size: 14pt;
 }
 
+path{
+    z-index: -1;
+}
+
 .jumbotron {
     color: rgb(31, 202, 202);
     background-color: white;
@@ -62,9 +66,17 @@ textarea {
 }
 
 #mypicture {
-    float: left;
-    max-height: 720px;
+    display:inline-block;
+    max-height: 640px;
     max-width: 480px;
+}
+
+.icon {
+    margin: 0 auto;
+}
+
+.icon:hover {
+    cursor: pointer;
 }
 
 .title-header {
@@ -75,6 +87,7 @@ textarea {
 
 .small-notes {
     font-size: 10pt;
+    text-align: center;
 }
 
 .center {
@@ -104,7 +117,7 @@ a {
 @media only screen and (max-width: 640px){
 
     #left-side-title {
-        margin-left: 150px;
+        margin-left: 200px;
         display: block;
     }
 
@@ -132,10 +145,8 @@ a {
     }
     
     #mypicture {
-        padding-left: 10px;
         width: 360px;
         height: 240px;
-        margin: 0 auto;
     }
 
     .title-header{
@@ -149,4 +160,10 @@ a {
     a{
         padding-left: 50px;
     }
+
+    .icon {
+        float:left;
+        margin: 10px;
+    }
+    
 }

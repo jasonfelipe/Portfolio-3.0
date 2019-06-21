@@ -12,6 +12,9 @@ import 'moment-timezone';
 //React CSS Animations
 import { CSSTransition } from 'react-transition-group';
 
+//Fontawesome stuff.
+import FAIcon from '../components/Icons/FAIcon';
+
 //Personal Assets
 import Me from '../assets/images/profile/its-me.jpg';
 import './pages.css'
@@ -86,6 +89,26 @@ class Home extends Component {
         })
     }
 
+    handleLinks = (event) =>{
+        event.preventDefault();
+        let icon = event.target.dataset.icon;
+        let win;
+        console.log("Clicked on: ", icon);
+        
+        switch (icon){
+            case "github":
+                console.log(icon);
+                win = window.open("https://github.com/jasonfelipe", '_blank');
+                win.focus();
+                break;
+
+            case 'linkedin':
+                    console.log(icon);
+                    win = window.open("https://www.linkedin.com/in/jason-felipe-089558107", '_blank');
+                    win.focus();
+                    break;
+        }
+    }
 
     render() {
         return (
@@ -121,14 +144,7 @@ class Home extends Component {
                                     <img src={Me} id='mypicture' alt='me' />
                                 </div>
                             </Row>
-                            <Row>
-                                <p className='small-notes'>
-                                    Born on: 11/08/1992
-                                    <br />
-                                    Born in: Vancouver, Canada (Dual Citizenship in CA and US)
-                                </p>
-                            </Row>
-
+                            
                             <h3 id='left-side-title'>Skills</h3>
                             <Row>
                                 <div id='skills' className='center'>
@@ -196,17 +212,34 @@ class Home extends Component {
                                     and improving on a constant basis. While Javascript is a widely used language, many packages, frameworks, and APIs are
                                     getting created and updated every day. To me, adapting and familiarity are a must in both the coding and teaching world.
                                </p>
+                                {/* Social Media Icons */}
                             </Row>
 
                             <Row>
-                                <a href='https://github.com/jasonfelipe/' rel='noopener noreferrer' target='_blank'>My Github Page</a>
+                                <h2 className='title-header'>Social Media</h2>
+
+                                <Col size='md-3'>
+                                </Col>
+                                <Col size='md-3'>
+                                    <FAIcon
+                                        onClick={this.handleLinks}
+                                        prefix="fab"
+                                        iconName="github"
+                                    />
+                                </Col>
+                                <Col size='md-3'>
+                                    <FAIcon
+                                        onClick={this.handleLinks}
+                                        prefix='fab'
+                                        iconName='linkedin'
+                                    />
+                                </Col>
                             </Row>
-                            <Row>
-                                <a href='https://www.linkedin.com/in/jason-felipe-089558107/' rel='noopener noreferrer' target='_blank'>My Linkedin Page</a>
-                            </Row>
+
                         </Col>
                         {/* End Right Side Column */}
                     </Row>
+
 
                 </Container>
             </div>
